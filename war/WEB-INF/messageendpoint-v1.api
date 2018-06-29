@@ -1,0 +1,271 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://new-projet-07022017.appspot.com/_ah/api",
+  "name" : "messageendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "discovery" : [ "PUBLIC" ],
+  "adapter" : {
+    "bns" : "https://new-projet-07022017.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "mycompany.com",
+  "ownerName" : "mycompany.com",
+  "packagePath" : "services",
+  "methods" : {
+    "messageendpoint.creerMessage" : {
+      "path" : "CreerMessage/{userId}/{texte}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tinyreddit.MessageEndpoint.CreerMessage",
+      "request" : {
+        "parameters" : {
+          "userId" : {
+            "type" : "string",
+            "required" : true
+          },
+          "texte" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "messageendpoint.mesMessages" : {
+      "path" : "MesMessage/{user}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tinyreddit.MessageEndpoint.MesMessage",
+      "request" : {
+        "parameters" : {
+          "user" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "messageendpoint.tendance" : {
+      "path" : "Tendance",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tinyreddit.MessageEndpoint.Tendance",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "messageendpoint.voterContre" : {
+      "path" : "VoterContre/{cle}/{userId}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tinyreddit.MessageEndpoint.VoterContre",
+      "request" : {
+        "parameters" : {
+          "cle" : {
+            "type" : "string",
+            "required" : true
+          },
+          "userId" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "messageendpoint.mesVote" : {
+      "path" : "MesVote/{user}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tinyreddit.MessageEndpoint.MesVote",
+      "request" : {
+        "parameters" : {
+          "user" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "messageendpoint.voterPour" : {
+      "path" : "VoterPlus/{cle}/{userId}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tinyreddit.MessageEndpoint.VoterPlus",
+      "request" : {
+        "parameters" : {
+          "cle" : {
+            "type" : "string",
+            "required" : true
+          },
+          "userId" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Entity" : {
+        "id" : "Entity",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "$ref" : "Key"
+          },
+          "propertiesFrom" : {
+            "$ref" : "Entity"
+          },
+          "kind" : {
+            "type" : "string"
+          },
+          "namespace" : {
+            "type" : "string"
+          },
+          "appId" : {
+            "type" : "string"
+          },
+          "parent" : {
+            "$ref" : "Key"
+          },
+          "properties" : {
+            "$ref" : "JsonMap"
+          }
+        }
+      },
+      "Key" : {
+        "id" : "Key",
+        "type" : "object",
+        "properties" : {
+          "kind" : {
+            "type" : "string"
+          },
+          "appId" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "namespace" : {
+            "type" : "string"
+          },
+          "complete" : {
+            "type" : "boolean"
+          },
+          "parent" : {
+            "$ref" : "Key"
+          }
+        }
+      },
+      "JsonMap" : {
+        "id" : "JsonMap",
+        "type" : "object"
+      },
+      "EntityCollection" : {
+        "id" : "EntityCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Entity"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "tinyreddit.MessageEndpoint.CreerMessage" : {
+        "response" : {
+          "$ref" : "Entity"
+        }
+      },
+      "tinyreddit.MessageEndpoint.MesMessage" : {
+        "response" : {
+          "$ref" : "EntityCollection"
+        }
+      },
+      "tinyreddit.MessageEndpoint.Tendance" : {
+        "response" : {
+          "$ref" : "EntityCollection"
+        }
+      },
+      "tinyreddit.MessageEndpoint.VoterContre" : {
+        "response" : {
+          "$ref" : "Entity"
+        }
+      },
+      "tinyreddit.MessageEndpoint.MesVote" : {
+        "response" : {
+          "$ref" : "EntityCollection"
+        }
+      },
+      "tinyreddit.MessageEndpoint.VoterPlus" : {
+        "response" : {
+          "$ref" : "Entity"
+        }
+      }
+    }
+  }
+}
