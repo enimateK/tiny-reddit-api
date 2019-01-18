@@ -14,3 +14,5 @@ https://github.com/enimateK/tiny-reddit-client/tree/master/src/app
 
 GIT Back End :
 https://github.com/enimateK/tiny-reddit-api
+
+Projet scolaire "Développement cloud" - M1 MIAGE - 2018
